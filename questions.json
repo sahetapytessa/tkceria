@@ -1,0 +1,62 @@
+[
+    {
+        "question": "What is the first letter of the alphabet?",
+        "options": ["A", "B", "C", "D"],
+        "correctAnswer": "A",
+        "category": "Alphabet"
+    },
+    {
+        "question": "How many fingers does a person have on one hand?",
+        "options": ["Three", "Four", "Five", "Six"],
+        "correctAnswer": "Five",
+        "category": "Body Parts"
+    },
+    {
+        "question": "What number comes after 2?",
+        "options": ["1", "2", "3", "4"],
+        "correctAnswer": "3",
+        "category": "Numbers"
+    },
+    {
+        "question": "Which letter makes the 'mmm' sound, like in 'mom'?",
+        "options": ["M", "S", "P", "T"],
+        "correctAnswer": "M",
+        "category": "Alphabet"
+    },
+    {
+        "question": "How many toes do you have on one foot?",
+        "options": ["Three", "Four", "Five", "Six"],
+        "correctAnswer": "Five",
+        "category": "Body Parts"
+    },
+    {
+        "question": "What is the color of the sun?",
+        "options": ["Blue", "Red", "Yellow", "Green"],
+        "correctAnswer": "Yellow",
+        "category": "Colors"
+    },
+    {
+        "question": "What number is shown by the digit '7'?",
+        "options": ["Five", "Six", "Seven", "Eight"],
+        "correctAnswer": "Seven",
+        "category": "Numbers"
+    },
+    {
+        "question": "Which letter comes after 'B' in the alphabet?",
+        "options": ["A", "B", "C", "D"],
+        "correctAnswer": "C",
+        "category": "Alphabet"
+    },
+    {
+        "question": "What is the name of the body part you use to hear?",
+        "options": ["Nose", "Ears", "Eyes", "Mouth"],
+        "correctAnswer": "Ears",
+        "category": "Body Parts"
+    },
+    {
+        "question": "What number comes before '10'?",
+        "options": ["Nine", "Ten", "Eleven", "Twelve"],
+        "correctAnswer": "Nine",
+        "category": "Numbers"
+    }
+]

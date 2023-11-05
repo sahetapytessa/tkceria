@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids' Learning - Human Body Parts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFD700; /* Set your background color */
+            text-align: center;
+        }
+
+        h1 {
+            color: #333; /* Set your text color */
+        }
+
+        #body-parts-image {
+            max-width: 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Learn Human Body Parts</h1>
+    <img id="body-parts-image" src="human_body.png" alt="Human Body Image" usemap="#bodymap">
+    
+    <map name="bodymap">
+        <area shape="poly" coords="100,100,120,140,150,140,180,100" alt="Head" title="Head">
+        <area shape="rect" coords="100,150,180,200" alt="Chest" title="Chest">
+        <!-- Add more area elements for other body parts -->
+    </map>
+
+    <p id="selected-body-part" style="display: none;"></p>
+
+    <script>
+        const bodyPartsImage = document.getElementById("body-parts-image");
+        const selectedBodyPart = document.getElementById("selected-body-part");
+
+        bodyPartsImage.addEventListener("click", (event) => {
+            const clickedArea = event.target;
+            if (clickedArea.tagName === "AREA") {
+                const bodyPartName = clickedArea.getAttribute("title");
+                selectedBodyPart.textContent = `You selected: ${bodyPartName}`;
+                selectedBodyPart.style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>

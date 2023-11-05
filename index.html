@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Web App Homepage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #333; /* Set your background color */
+            color: #fff; /* Set your text color */
+            font-family: Arial, sans-serif;
+            height: 100vh; /* Make the body take up the full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .menu-button {
+            padding: 10px 20px;
+            background-color: #007bff; /* Set button background color */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Add more CSS rules to style your content */
+    </style>
+</head>
+<body>
+    <h1>Welcome to Your Web App</h1>
+    <p>This is the homepage of your web app. You can add your content here.</p>
+    <div class="menu-buttons">
+        <button class="menu-button" onclick="window.location.href = 'numbers.html';">Numbers</button>
+        <button class="menu-button" onclick="window.location.href = 'alphabet.html';">Alphabet</button>
+        <button class="menu-button" onclick="window.location.href = 'body_parts.html';">Body Parts</button>
+        <button class="menu-button" onclick="window.location.href = 'quiz.html';">Quiz</button>
+    </div>
+</body>
+</html>
