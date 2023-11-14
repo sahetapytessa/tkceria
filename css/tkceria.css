@@ -1,27 +1,112 @@
-.nav {
-    position: fixed; /*left: 50%;*/
-    width: 100%;
-    top: 20px;
-    z-index: 9;
-    padding-left: 10px;
+  /* Import the Cherry Bomb One font from Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;700&display=swap');
+  body {
+      margin: 0;
+      padding: 0;
+      /*background-color: #333; /* Set your background color */
+      background-image: url('../assets/img/bg1.png'); /* Replace with your background image URL */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff; /* Set your text color */
+      font-family: Arial, sans-serif;
+      height: 100vh; /* Make the body take up the full viewport height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
   }
-  .nav a {
-    padding: 7px 20px;
-    border-radius: 7px;
-    margin-right: 10px;
-    background: rgba(255, 255, 255, 0.5);
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -ms-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-    text-decoration: none;
-    color: black;
-    font-family: sans-serif, arial;
-    font-weight: 100;
+  header, h1, h2, .button-row, .menu-button, .copyright {
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeIn 1s ease-out forwards;
   }
-  .nav a.active {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+
+  h1 {
+      /* width: 100%; */
+      /* padding: 20px */
+      text-align: center;
+      font-family: 'Cherry Bomb One', cursive; /* Use the imported Cherry Bomb One font */
+      color: #ffff9d;
+      font-size: 5rem;
+      text-shadow:
+          -3px -3px 0 #ffcc6b,  
+          3px -3px 0 #ffcc6b,
+          -3px 3px 0 #ffcc6b,
+          3px 3px 0 #ffcc6b;
+      margin: 0;
+      animation-delay: .5s;
   }
-  .nav a:hover { background: rgba(255, 255, 255, 0.7); }
+  h2 {
+      margin: 0;
+      color: #c1a8e0;
+      /* padding: 0; */
+      font-family: 'Cherry Bomb One', sans-serif; /* Use the imported Prompt font */
+      text-align: center;
+      text-shadow:
+          -2px -2px 0 #b085dc,  
+          2px -2px 0 #b085dc,
+          -2px 2px 0 #b085dc,
+          2px 2px 0 #b085dc;
+      margin: 0;
+      animation-delay: 1s;
+  }
+
+  .button-row {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+      width: 50%;
+      gap: 10px;
+      animation-delay: 1.5s;
+  }
+
+  .menu-button {
+      
+      text-align: center;
+      width: 100px; /* Adjust the width of each button as needed */
+      position: relative;
+      background-color: #ff6699;
+      border-radius: 25px;
+      border: 10px solid #fe518e;
+      padding: 0;
+      padding-block: 0;
+  }
+
+  .menu-button img {
+      width: 60px; /* Set image width */
+      height: 60px; /* Set image height */
+      border-radius: 25%; /* Make the image circular */
+      margin-bottom: 10px;
+  }
+
+  .big-button {
+      font-family: 'Prompt', sans-serif; /* Use the imported Prompt font */
+      /* padding: 10px; */
+      font-weight: bold;
+      font-size: 1rem; /* Adjust the font size as needed */
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      width: 100%; /* Set button width to 100% */
+  }
+
+  @keyframes fadeIn {
+      from {
+          opacity: 0;
+          transform: translateY(-20px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  
+
+
+  /* Add more CSS rules to style your content */

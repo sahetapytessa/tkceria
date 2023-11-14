@@ -3,50 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Draw Numbers and Alphabets with Brush Stroke and Pronunciation</title>
+    <title>TK CERIA</title>
+    <link rel="stylesheet" href="css/tkceria.css">
     <style>
-        button {
-            margin: 10px;
-            padding: 5px 10px;
+        * {
+            animation-duration: 0ms !important;
+            animation-delay: 0ms !important;
+        }
+        .back-button{
+            font-family: 'Cherry Bomb One', cursive;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 99;
+        }
+        .back-button a{
+            text-decoration: 0;
+            color: #ff7aa8;
+            text-shadow: 1px solid #fe518e;
+        }
+        .button-group{
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        canvas{
+            background-color: #131313;
+            border-radius: 15px;
+            border: solid 15px #000;
         }
     </style>
 </head>
 <body>
-    <canvas id="canvas" width="400" height="200" style="border: 1px solid #000;"></canvas>
+    <div class="back-button"><a href="../">&lt; Kembali</a></div>
+    <h1>TK CERIA</h1>
+    <h2 style="margin-bottom:0;">BELAJAR HURUF</h2>
+    <div class="button-group">
+        <button id="btn-a">A</button>
+        <button id="btn-b">B</button>
+        <button id="btn-c">C</button>
+        <button id="btn-d">D</button>
+        <button id="btn-e">E</button>
+        <button id="btn-f">F</button>
+        <button id="btn-g">G</button>
+        <button id="btn-h">H</button>
+        <button id="btn-i">I</button>
+        <button id="btn-j">J</button>
+        <button id="btn-k">K</button>
+        <button id="btn-l">L</button>
+        <button id="btn-m">M</button>
+        <button id="btn-n">N</button>
+        <button id="btn-o">O</button>
+        <button id="btn-p">P</button>
+        <button id="btn-q">Q</button>
+        <button id="btn-r">R</button>
+        <button id="btn-s">S</button>
+        <button id="btn-t">T</button>
+        <button id="btn-u">U</button>
+        <button id="btn-v">V</button>
+        <button id="btn-w">W</button>
+        <button id="btn-x">X</button>
+        <button id="btn-y">Y</button>
+        <button id="btn-z">Z</button>
+        <br>
+        <button id="clear-button">Bersihkan</button>
+
+    </div>
+    <canvas id="canvas" width="700" height="200"></canvas>
     <br>
-    <button id="clear-button">Clear</button>
-    <button id="alphabet-a-button">Alphabet A</button>
-    <button id="alphabet-b-button">Alphabet B</button>
-    <button id="alphabet-c-button">Alphabet C</button>
-    <!-- Add more buttons for additional numbers and alphabets -->
+
+    <!-- Add more char buttons as needed -->
     <script>
         const canvas = document.getElementById("canvas");
         const ctx = canvas.getContext("2d");
         let drawing = false;
         let speechSynthesis = window.speechSynthesis;
         const clearButton = document.getElementById("clear-button");
-        const alphabetAButton = document.getElementById("alphabet-a-button");
-        const alphabetBButton = document.getElementById("alphabet-b-button");
-        const alphabetCButton = document.getElementById("alphabet-c-button");
-        // Add more buttons for additional numbers and alphabets
+        const btnA = document.getElementById("btn-a");
+        const btnB = document.getElementById("btn-b");
+        const btnC = document.getElementById("btn-c");
+        const btnD = document.getElementById("btn-d");
+        const btnE = document.getElementById("btn-e");
+        const btnF = document.getElementById("btn-f");
+        const btnG = document.getElementById("btn-g");
+        const btnH = document.getElementById("btn-h");
+        const btnI = document.getElementById("btn-i");
+        const btnJ = document.getElementById("btn-j");
+        const btnK = document.getElementById("btn-k");
+        const btnL = document.getElementById("btn-l");
+        const btnM = document.getElementById("btn-m");
+        const btnN = document.getElementById("btn-n");
+        const btnO = document.getElementById("btn-o");
+        const btnP = document.getElementById("btn-p");
+        const btnQ = document.getElementById("btn-q");
+        const btnR = document.getElementById("btn-r");
+        const btnS = document.getElementById("btn-s");
+        const btnT = document.getElementById("btn-t");
+        const btnU = document.getElementById("btn-u");
+        const btnV = document.getElementById("btn-v");
+        const btnW = document.getElementById("btn-w");
+        const btnX = document.getElementById("btn-x");
+        const btnY = document.getElementById("btn-y");
+        const btnZ = document.getElementById("btn-z");
+        // Add more buttons for additional chars
 
         clearButton.addEventListener("click", () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         });
 
-
-        alphabetAButton.addEventListener("click", () => {
-            drawAndSpeakCharacter("A");
+        btnA.addEventListener("click", () => {
+            drawAndSpeakChar("A");
         });
 
-        alphabetBButton.addEventListener("click", () => {
-            drawAndSpeakCharacter("B");
+        btnB.addEventListener("click", () => {
+            drawAndSpeakChar("B");
         });
 
-        alphabetCButton.addEventListener("click", () => {
-            drawAndSpeakCharacter("C");
+        btnC.addEventListener("click", () => {
+            drawAndSpeakChar("C");
         });
-        // Add event listeners for more number and alphabet buttons
+
+        btnD.addEventListener("click", () => {
+            drawAndSpeakChar("D");
+        });
+
+        btnE.addEventListener("click", () => {
+            drawAndSpeakChar("E");
+        });
+
+        btnF.addEventListener("click", () => {
+            drawAndSpeakChar("F");
+        });
+
+        btnG.addEventListener("click", () => {
+            drawAndSpeakChar("G");
+        });
+
+        btnH.addEventListener("click", () => {
+            drawAndSpeakChar("H");
+        });
+
+        btnI.addEventListener("click", () => {
+            drawAndSpeakChar("I");
+        });
+
+        btnJ.addEventListener("click", () => {
+            drawAndSpeakChar("J");
+        });
+
+        btnK.addEventListener("click", () => {
+            drawAndSpeakChar("K");
+        });
+
+        btnL.addEventListener("click", () => {
+            drawAndSpeakChar("L");
+        });
+
+        btnM.addEventListener("click", () => {
+            drawAndSpeakChar("M");
+        });
+
+        btnN.addEventListener("click", () => {
+            drawAndSpeakChar("N");
+        });
+
+        btnO.addEventListener("click", () => {
+            drawAndSpeakChar("O");
+        });
+
+        btnP.addEventListener("click", () => {
+            drawAndSpeakChar("P");
+        });
+
+        btnQ.addEventListener("click", () => {
+            drawAndSpeakChar("Q");
+        });
+
+        btnR.addEventListener("click", () => {
+            drawAndSpeakChar("R");
+        });
+
+        btnS.addEventListener("click", () => {
+            drawAndSpeakChar("S");
+        });
+
+        btnT.addEventListener("click", () => {
+            drawAndSpeakChar("T");
+        });
+
+        btnU.addEventListener("click", () => {
+            drawAndSpeakChar("U");
+        });
+
+        btnV.addEventListener("click", () => {
+            drawAndSpeakChar("V");
+        });
+
+        btnW.addEventListener("click", () => {
+            drawAndSpeakChar("W");
+        });
+
+        btnX.addEventListener("click", () => {
+            drawAndSpeakChar("X");
+        });
+
+        btnY.addEventListener("click", () => {
+            drawAndSpeakChar("Y");
+        });
+
+        btnZ.addEventListener("click", () => {
+            drawAndSpeakChar("Z");
+        });
+
+
+        
+        // Add event listeners for more char buttons
 
         canvas.addEventListener("mousedown", () => {
             drawing = true;
@@ -61,9 +231,9 @@
         canvas.addEventListener("mousemove", (e) => {
             if (!drawing) return;
 
-            ctx.lineWidth = 5;
+            ctx.lineWidth = 10;
             ctx.lineCap = "round";
-            ctx.strokeStyle = "#000";
+            ctx.strokeStyle = "#fff";
 
             const rect = canvas.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -87,9 +257,9 @@
         canvas.addEventListener("touchmove", (e) => {
             if (!drawing) return;
 
-            ctx.lineWidth = 5;
+            ctx.lineWidth = 15;
             ctx.lineCap = "round";
-            ctx.strokeStyle = "#000";
+            ctx.strokeStyle = "#fff";
 
             const touch = e.touches[0];
             const x = touch.clientX - canvas.offsetLeft;
@@ -99,15 +269,16 @@
             ctx.stroke();
         });
 
-        function drawAndSpeakCharacter(character) {
+        function drawAndSpeakChar(char) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.font = "48px Arial";
-            ctx.fillText(character, 150, 100);
-            speakCharacter(character);
+            ctx.font = "150px Comic Sans MS";
+            ctx.fillStyle = "white";
+            ctx.fillText(char, 15, 150);
+            speakChar(char);
         }
 
-        function speakCharacter(character) {
-            const utterance = new SpeechSynthesisUtterance(character);
+        function speakChar(char) {
+            const utterance = new SpeechSynthesisUtterance(char);
             speechSynthesis.speak(utterance);
         }
     </script>

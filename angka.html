@@ -3,21 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Draw Numbers with Brush Stroke and Pronunciation</title>
+    <title>TK CERIA</title>
+    <link rel="stylesheet" href="css/tkceria.css">
     <style>
-        button {
-            margin: 10px;
-            padding: 5px 10px;
+        * {
+            animation-duration: 0ms !important;
+            animation-delay: 0ms !important;
+        }
+        .back-button{
+            font-family: 'Cherry Bomb One', cursive;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 99;
+        }
+        .back-button a{
+            text-decoration: 0;
+            color: #ff7aa8;
+            text-shadow: 1px solid #fe518e;
+        }
+        .button-group{
+            margin-bottom: 15px;
+        }
+        canvas{
+            background-color: #131313;
+            border-radius: 15px;
+            border: solid 15px #000;
         }
     </style>
 </head>
 <body>
-    <canvas id="canvas" width="400" height="200" style="border: 1px solid #000;"></canvas>
+    <div class="back-button"><a href="../">&lt; Kembali</a></div>
+    <h1>TK CERIA</h1>
+    <h2 style="margin-bottom:0;">BELAJAR ANGKA</h2>
+    <div class="button-group">
+        <button id="btn-satu">1</button>
+        <button id="btn-dua">2</button>
+        <button id="btn-tiga">3</button>
+        <button id="btn-empat">4</button>
+        <button id="btn-lima">5</button>
+        <button id="btn-enam">6</button>
+        <button id="btn-tujuh">7</button>
+        <button id="btn-delapan">8</button>
+        <button id="btn-sembilan">9</button>
+        <button id="btn-sepuluh">10</button>
+        <button id="clear-button">Bersihkan</button>
+
+    </div>
+    <canvas id="canvas" width="700" height="200"></canvas>
     <br>
-    <button id="clear-button">Clear</button>
-    <button id="number-one-button">Number 1</button>
-    <button id="number-two-button">Number 2</button>
-    <button id="number-three-button">Number 3</button>
+
     <!-- Add more number buttons as needed -->
     <script>
         const canvas = document.getElementById("canvas");
@@ -25,25 +60,60 @@
         let drawing = false;
         let speechSynthesis = window.speechSynthesis;
         const clearButton = document.getElementById("clear-button");
-        const numberOneButton = document.getElementById("number-one-button");
-        const numberTwoButton = document.getElementById("number-two-button");
-        const numberThreeButton = document.getElementById("number-three-button");
+        const btnSatu = document.getElementById("btn-satu");
+        const btnDua = document.getElementById("btn-dua");
+        const btnTiga = document.getElementById("btn-tiga");
+        const btnEmpat = document.getElementById("btn-empat");
+        const btnLima = document.getElementById("btn-lima");
+        const btnEnam = document.getElementById("btn-enam");
+        const btnTujuh = document.getElementById("btn-tujuh");
+        const btnDelapan = document.getElementById("btn-delapan");
+        const btnSembilan = document.getElementById("btn-sembilan");
+        const btnSepuluh = document.getElementById("btn-sepuluh");
         // Add more buttons for additional numbers
 
         clearButton.addEventListener("click", () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         });
 
-        numberOneButton.addEventListener("click", () => {
+        btnSatu.addEventListener("click", () => {
             drawAndSpeakNumber("1");
         });
 
-        numberTwoButton.addEventListener("click", () => {
+        btnDua.addEventListener("click", () => {
             drawAndSpeakNumber("2");
         });
 
-        numberThreeButton.addEventListener("click", () => {
+        btnTiga.addEventListener("click", () => {
             drawAndSpeakNumber("3");
+        });
+        
+        btnEmpat.addEventListener("click", () => {
+            drawAndSpeakNumber("4");
+        });
+        
+        btnLima.addEventListener("click", () => {
+            drawAndSpeakNumber("5");
+        });
+
+        btnEnam.addEventListener("click", () => {
+            drawAndSpeakNumber("6");
+        });
+
+        btnTujuh.addEventListener("click", () => {
+            drawAndSpeakNumber("7");
+        });
+
+        btnDelapan.addEventListener("click", () => {
+            drawAndSpeakNumber("8");
+        });
+
+        btnSembilan.addEventListener("click", () => {
+            drawAndSpeakNumber("9");
+        });
+
+        btnSepuluh.addEventListener("click", () => {
+            drawAndSpeakNumber("10");
         });
         // Add event listeners for more number buttons
 
@@ -60,9 +130,9 @@
         canvas.addEventListener("mousemove", (e) => {
             if (!drawing) return;
 
-            ctx.lineWidth = 5;
+            ctx.lineWidth = 10;
             ctx.lineCap = "round";
-            ctx.strokeStyle = "#000";
+            ctx.strokeStyle = "#fff";
 
             const rect = canvas.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -86,9 +156,9 @@
         canvas.addEventListener("touchmove", (e) => {
             if (!drawing) return;
 
-            ctx.lineWidth = 5;
+            ctx.lineWidth = 15;
             ctx.lineCap = "round";
-            ctx.strokeStyle = "#000";
+            ctx.strokeStyle = "#fff";
 
             const touch = e.touches[0];
             const x = touch.clientX - canvas.offsetLeft;
@@ -100,8 +170,9 @@
 
         function drawAndSpeakNumber(number) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.font = "48px Arial";
-            ctx.fillText(number, 150, 100);
+            ctx.font = "150px Comic Sans MS";
+            ctx.fillStyle = "white";
+            ctx.fillText(number, 15, 150);
             speakNumber(number);
         }
 
