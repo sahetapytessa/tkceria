@@ -1,62 +1,62 @@
 [
     {
-        "question": "What is the first letter of the alphabet?",
+        "question": "Apakah huruf pertama dalam alfabet?",
         "options": ["A", "B", "C", "D"],
         "correctAnswer": "A",
-        "category": "Alphabet"
+        "category": "Huruf"
     },
     {
-        "question": "How many fingers does a person have on one hand?",
-        "options": ["Three", "Four", "Five", "Six"],
-        "correctAnswer": "Five",
-        "category": "Body Parts"
+        "question": "Berapa  banyak jari di tangan  manusia?",
+        "options": ["Tiga", "Empat", "Lima", "Enam"],
+        "correctAnswer": "Lima",
+        "category": "Tubuh"
     },
     {
-        "question": "What number comes after 2?",
+        "question": "Angka berapakah setelah angka '2'?",
         "options": ["1", "2", "3", "4"],
         "correctAnswer": "3",
-        "category": "Numbers"
+        "category": "Angka"
     },
     {
-        "question": "Which letter makes the 'mmm' sound, like in 'mom'?",
+        "question": "Huruf apakah  yang bunyinya 'mmm', Seperti di kata 'Mama'?",
         "options": ["M", "S", "P", "T"],
         "correctAnswer": "M",
-        "category": "Alphabet"
+        "category": "Huruf"
     },
     {
-        "question": "How many toes do you have on one foot?",
-        "options": ["Three", "Four", "Five", "Six"],
-        "correctAnswer": "Five",
-        "category": "Body Parts"
+        "question": "Berapa Banyak jari kaki manusia?",
+        "options": ["Tiga", "Empat", "Lima", "Enam"],
+        "correctAnswer": "Lima",
+        "category": "Tubuh"
     },
     {
-        "question": "What is the color of the sun?",
-        "options": ["Blue", "Red", "Yellow", "Green"],
-        "correctAnswer": "Yellow",
-        "category": "Colors"
+        "question": "Huruf manakah yang pertama?",
+        "options": ["A", "B", "C", "D"],
+        "correctAnswer": "D",
+        "category": "Huruf"
     },
     {
-        "question": "What number is shown by the digit '7'?",
-        "options": ["Five", "Six", "Seven", "Eight"],
-        "correctAnswer": "Seven",
-        "category": "Numbers"
+        "question": "Disebut apakah angka berikut '7'?",
+        "options": ["Lima", "Enam", "Tujuh", "Delapan"],
+        "correctAnswer": "Tujuh",
+        "category": "Angka"
     },
     {
-        "question": "Which letter comes after 'B' in the alphabet?",
+        "question": "Huruf apakah setelah huruf 'B'?",
         "options": ["A", "B", "C", "D"],
         "correctAnswer": "C",
-        "category": "Alphabet"
+        "category": "Huruf"
     },
     {
-        "question": "What is the name of the body part you use to hear?",
-        "options": ["Nose", "Ears", "Eyes", "Mouth"],
-        "correctAnswer": "Ears",
-        "category": "Body Parts"
+        "question": "Bagian tubuh manakah yang di gunakan untuk mendengar?",
+        "options": ["Hidung", "Telinga", "Mata", "Mulut"],
+        "correctAnswer": "Telinga",
+        "category": "Tubuh"
     },
     {
-        "question": "What number comes before '10'?",
-        "options": ["Nine", "Ten", "Eleven", "Twelve"],
-        "correctAnswer": "Nine",
-        "category": "Numbers"
+        "question": "Manakah Angka yang pertama?",
+        "options": ["5", "4", "2", "1"],
+        "correctAnswer": "1",
+        "category": "Angka"
     }
 ]
