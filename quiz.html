@@ -3,13 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kids' Quiz App</title>
+    <title>TK CERIA</title>
+    <link rel="stylesheet" href="css/tkceria.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
+        * {
+            animation-duration: 0ms !important;
+            animation-delay: 0ms !important;
         }
-
+        .back-button{
+            font-family: 'Cherry Bomb One', cursive;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 99;
+        }
+        .back-button a{
+            text-decoration: 0;
+            color: #ff7aa8;
+            text-shadow: 1px solid #fe518e;
+        }
+        .button-group{
+            margin-bottom: 15px;
+        }
+        canvas{
+            background-color: #131313;
+            border-radius: 15px;
+            border: solid 15px #000;
+        }
+        
         #quiz-container {
             max-width: 600px;
             margin: 0 auto;
@@ -21,28 +42,63 @@
 
         .question {
             font-size: 24px;
+            font-weight: bold;
             margin: 20px 0;
+            font-family: 'Prompt', sans-serif;
+            text-shadow: 
+                -1px -1px 0 #333,  
+                1px -1px 0 #333,
+                -1px 1px 0 #333,
+                1px 1px 0 #333;
+            text-align: center;
         }
 
         .options {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: space-around;
+            /* width: 50%; */
             align-items: center;
         }
 
         .option {
             margin: 10px 0;
         }
+        button.option{
+            font-family: 'Prompt', sans-serif;
+            background-color: #ff7aa8;
+            border: 5px solid #fe518e;
+            font-size: 1rem;
+            color: #fff;
+            border-radius: 5px;
+            padding: 5px 15px;
+        }
+        button.option:hover, button.option:active {
+            background-color: #6ee3ce;
+            border: 5px solid #4ecab3;
+            
+        }
 
         #result {
             font-size: 24px;
             margin: 20px 0;
+            font-family: 'Prompt', sans-serif;
+            text-shadow: 
+                -1px -1px 0 #333,  
+                1px -1px 0 #333,
+                -1px 1px 0 #333,
+                1px 1px 0 #333;
+            text-align: center;
         }
     </style>
 </head>
 <body>
+    <div class="back-button"><a href="index.html">&lt; Kembali</a></div>
+    <h1>TK CERIA</h1>
+    <h2 style="margin-bottom:0;">QUIZ</h2>
+
     <div id="quiz-container">
-        <h1>Kids' Quiz</h1>
         <div id="quiz">
             <div class="question" id="question"></div>
             <div class="options" id="options"></div>
@@ -89,7 +145,7 @@
                     optionsElement.appendChild(optionButton);
                 });
             } else {
-                questionElement.innerText = "Quiz Completed!";
+                questionElement.innerText = "Quiz Selesai!";
                 optionsElement.innerHTML = "";
                 displayResults();
             }
@@ -112,14 +168,15 @@
         }
 
         function displayResults() {
-            resultElement.innerHTML = `<p>You got ${correctAnswers} out of 5 correct answers.</p>`;
-            resultElement.innerHTML += "<p>Your answers:</p>";
+            resultElement.innerHTML = `<p>${correctAnswers} dari 5 jawaban benar.</p><button class="option" onclick
+            ="window.location.href = 'quiz.html';">Mulai lagi</button>`;
+            // resultElement.innerHTML += "<p>Your answers:</p>";
 
-            for (let i = 0; i < 5; i++) {
-                resultElement.innerHTML += `<p>Question ${i + 1}: ${questions[i].question}</p>`;
-                resultElement.innerHTML += `<p>Your Answer: ${kidsAnswers[i]}</p>`;
-                resultElement.innerHTML += `<p>Correct Answer: ${questions[i].correctAnswer}</p><br>`;
-            }
+            // for (let i = 0; i < 5; i++) {
+            //     resultElement.innerHTML += `<p>Question ${i + 1}: ${questions[i].question}</p>`;
+            //     resultElement.innerHTML += `<p>Your Answer: ${kidsAnswers[i]}</p>`;
+            //     resultElement.innerHTML += `<p>Correct Answer: ${questions[i].correctAnswer}</p><br>`;
+            // }
         }
     </script>
 </body>
