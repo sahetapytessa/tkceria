@@ -1,50 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kids' Learning - Human Body Parts</title>
+    <title>TK CERIA</title>
+    <link rel="stylesheet" href="css/tkceria.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #FFD700; /* Set your background color */
+        * {
+            animation-duration: 0ms !important;
+            animation-delay: 0ms !important;
+        }
+
+        .back-button {
+            font-family: 'Cherry Bomb One', cursive;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 99;
+        }
+
+        .back-button a {
+            text-decoration: 0;
+            color: #ff7aa8;
+            text-shadow: 1px solid #fe518e;
+        }
+
+        .button-group {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .container {
             text-align: center;
         }
 
         h1 {
-            color: #333; /* Set your text color */
+            color: #333;
         }
 
-        #body-parts-image {
-            max-width: 100%;
-            cursor: pointer;
+        .image-container {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .body-part-label {
+            position: absolute;
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            display: none;
         }
     </style>
 </head>
-<body>
-    <h1>Learn Human Body Parts</h1>
-    <img id="body-parts-image" src="human_body.png" alt="Human Body Image" usemap="#bodymap">
-    
-    <map name="bodymap">
-        <area shape="poly" coords="100,100,120,140,150,140,180,100" alt="Head" title="Head">
-        <area shape="rect" coords="100,150,180,200" alt="Chest" title="Chest">
-        <!-- Add more area elements for other body parts -->
-    </map>
 
-    <p id="selected-body-part" style="display: none;"></p>
+<body>
+    <div class="back-button"><a href="index.html">&lt; Kembali</a></div>
+    <h1>TK CERIA</h1>
+    <h2 style="margin-bottom:0;">BELAJAR ANGGOTA TUBUH</h2>
+
+    <div class="image-container">
+        <img src="assets/img/full-body.png" alt="Human Body" usemap="#humanBodyMap" id="humanBodyImage">
+        <map name="humanBodyMap">
+            <area shape="rect" coords="115,372,150,389" alt="Lutut" title="Lutut">
+            <area shape="rect" coords="56,372,89,389" alt="Lutut" title="Lutut">
+            <area shape="rect" coords="115,360,165,484" alt="Kaki" title="Kaki">
+            <area shape="rect" coords="55,360,86,484" alt="Kaki" title="Kaki">
+            <area shape="poly" coords="160,211,152,200,125,189,125,211" alt="Pundak" title="Pundak">
+            <area shape="poly" coords="46,211,53,200,81,189,81,211" alt="Pundak" title="Pundak">
+            <area shape="poly" coords="160,212,146,257,156,281,170,304,168,327,175,343,200,324" alt="Tangan"
+                title="Tangan">
+            <area shape="poly" coords="46,212,59,257,49,281,35,304,38,327,26,343,9,324" alt="Tangan" title="Tangan">
+            <area shape="rect" coords="146,120,160,144" alt="Telinga" title="Telinga">
+            <area shape="rect" coords="46,120,60,144" alt="Telinga" title="Telinga">
+            <area shape="rect" coords="86,155,118,167" alt="Mulut" title="Mulut">
+            <area shape="rect" coords="93,137,105,146" alt="Hidung" title="Hidung">
+            <area shape="rect" coords="71,115,131,133" alt="Hidung" title="Mata">
+            <area shape="rect" coords="35,30,173,173" alt="Kepala" title="Kepala">
+            <!-- Add more areas for other body parts as needed -->
+        </map>
+    </div>
+
+    <!-- <div class="description" id="description">
+        Hover over a body part to see its label. Click on a body part to learn more!
+    </div> -->
+    </div>
 
     <script>
-        const bodyPartsImage = document.getElementById("body-parts-image");
-        const selectedBodyPart = document.getElementById("selected-body-part");
+        document.addEventListener('DOMContentLoaded', function () {
+            const image = document.getElementById('humanBodyImage');
+            const description = document.getElementById('description');
+            const areas = document.getElementsByTagName('area');
 
-        bodyPartsImage.addEventListener("click", (event) => {
-            const clickedArea = event.target;
-            if (clickedArea.tagName === "AREA") {
-                const bodyPartName = clickedArea.getAttribute("title");
-                selectedBodyPart.textContent = `You selected: ${bodyPartName}`;
-                selectedBodyPart.style.display = "block";
+            function handleMouseOver(event) {
+                const hoveredPart = event.target.getAttribute('title');
+                if (hoveredPart) {
+                    description.textContent = `Hovering over the ${hoveredPart.toLowerCase()}!`;
+                }
             }
+
+            function handleMouseOut() {
+                description.textContent = 'Hover over a body part to see its label. Click on a body part to learn more!';
+            }
+
+            function handleAreaClick(event) {
+                const clickedPart = event.target.getAttribute('title');
+                const info = event.target.getAttribute('data-info');
+                console.log('Clicked Part:', clickedPart);
+                if (clickedPart) {
+                    const utterance = new SpeechSynthesisUtterance(clickedPart);
+                    speechSynthesis.speak(utterance);
+                    description.innerHTML = `
+                <strong>${clickedPart}</strong><br>
+                ${info || 'No additional information available.'}
+            `;
+
+                    // Remove 'active' class from all areas
+                    for (const area of areas) {
+                        area.classList.remove('active');
+                    }
+
+                    // Add 'active' class to the clicked area
+                    event.target.classList.add('active');
+                }
+            }
+
+            // Attach event listeners to each area
+            for (const area of areas) {
+                area.addEventListener('mouseover', handleMouseOver);
+                area.addEventListener('mouseout', handleMouseOut);
+                area.addEventListener('click', handleAreaClick);
+            }
+
+            // Reset description when mouse leaves the image
+            image.addEventListener('mouseout', handleMouseOut);
         });
+
     </script>
 </body>
+
 </html>
